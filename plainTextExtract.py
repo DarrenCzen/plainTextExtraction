@@ -1,5 +1,7 @@
 import re
 import nltk
+import json
+
 
 stopIndicator = 'Stop'
 indicator = '-----'
@@ -38,7 +40,5 @@ for lineNumber in range(0,len(newList)):
 
 	prevLine = newList[lineNumber]
 
-
-for item in content:
-	print(item['name'])
-	print(item['info'])
+with open('test.json', 'w+') as fout:
+    json.dump(content , fout)
